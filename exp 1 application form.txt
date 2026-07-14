@@ -1,0 +1,42 @@
+<html>
+<head>
+<center><title>Student Registration Form</title></center>
+</head>
+<body>
+<center><h1>Students Registration Form</h1></center>
+<form>
+<!--STUDENT DETAILS-->
+<p><label for="name">Name:</label><br>
+<input type="text" id="name" name="name" value="name"><br></p>
+<!--Email-->
+<p><label for="email">Email:</label><br>
+<input type="email" id="email" name="email" value="email"><br></p>
+<!--PASSWORD-->
+<p><label for="password">Password:</label><br>
+<input type="password" id="password" name="password" value="password"><br></p>
+<!--DOB-->
+<label for="dob">DOB:</label><br>
+<input type="date" id="dob" name="dob" value="dob"><br>
+<!--GENDER-->
+<p>Gender:</p>
+<input type="radio" id="f" name="Gender" value="FEMALE">
+<label for="f">FEMALE</label><br>
+<input type="radio" id="m" name="Gender" value="MALE">
+<label for="m">MALE</label><br>
+<input type="radio" id="other" name="Gender" value="OTHER">
+<label for="other">OTHER</label>
+<!--COURSE-->
+<p>Courses:</p>
+<input type="checkbox" id="c1" name="c1" value="CSE">
+<label for="c1">CSE</label><br>
+<input type="checkbox" id="c2" name="c2" value="IT">
+<label for="c2">IT</label><br>
+<input type="checkbox" id="c3" name="c3" value="ECE">
+<label for="c3">ECE</label><br>
+<input type="checkbox" id="c4" name="c4" value="EEE">
+<label for="c4">EEE</label><br>
+<p>Address:</p>
+<textarea name="message" rows="10" cols="30">Type address here</textarea>
+<br><br>
+<input type="submit" value="Submit">
+<input type="reset" value="Reset">
