@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Form Validation</title>
+<style>
+body{
+font-family:Arial;
+background:#f4f4f4;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+.container{
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 0 10px gray;
+width:350px;
+}
+input{
+width:100%;
+padding:10px;
+margin-top:5px;
+margin-bottom:15px;
+}
+button{
+width:100%;
+padding:10px;
+background:blue;
+color:yellow;
+border:none;
+cursor:pointer;
+}
+button:hover{
+background:#0b7dda;
+}
+.error{
+color:red;
+font-size:14px;
+}
+.success{
+color:green;
+text-align:center;
+margin-top:10px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h2 align="center">Registration Form</h2>
+<form onsubmit="return validateForm()">
+<label>Email</label>
+<input
+type="text"
+id="email"
+placeholder="Enter Email"
+onkeyup="validateEmail()">
+<div id="emailError" class="error"></div>
+<label>Phone Number</label>
+<input
+type="text"
+id="phone"
+placeholder="Enter Phone Number"
+maxlength="10"
+onkeyup="validatePhone()">
+<div id="phoneError" class="error"></div>
+<button type="submit">
+Register
+</button>
+<div id="success" class="success"></div>
+</form>
+</div>
+<script>
+function validateEmail(){
+let email=document.getElementById("email").value;
+let pattern=/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+if(pattern.test(email)){
+document.getElementById("emailError").innerHTML="";
+return true;
+}
+else{
+document.getElementById("emailError").innerHTML="Invalid Email Address";
+return false;
+}
+}
+function validatePhone(){
+let phone=document.getElementById("phone").value;
+let pattern=/^[0-9]{10}$/;
+if(pattern.test(phone)){
+document.getElementById("phoneError").innerHTML="";
+return true;
+}
+else{
+document.getElementById("phoneError").innerHTML="Phone Number must contain exactly 10 digits";
+return false;
+}
+}
+function validateForm(){
+let emailValid=validateEmail();
+let phoneValid=validatePhone();
+if(emailValid && phoneValid){
+document.getElementById("success").innerHTML="Registration Successful!";
+return false;
+}
+return false;
+}
+</script>
+</body>
+</html>
