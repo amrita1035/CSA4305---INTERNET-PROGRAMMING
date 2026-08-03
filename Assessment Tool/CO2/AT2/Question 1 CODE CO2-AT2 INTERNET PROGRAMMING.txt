@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Navigation Bar</title>
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+body{
+background:#f4f4f4;
+}
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:#222;
+padding:15px 30px;
+color:white;
+position:relative;
+}
+.logo{
+font-size:24px;
+font-weight:bold;
+}
+.nav-links{
+display:flex;
+list-style:none;
+}
+.nav-links li{
+margin-left:20px;
+}
+.nav-links a{
+color:white;
+text-decoration:none;
+}
+.nav-links a:hover{
+color:orange;
+}
+.menu-icon{
+display:none;
+font-size:30px;
+cursor:pointer;
+}
+@media(max-width:768px){
+.menu-icon{
+display:block;
+}
+.nav-links{
+display:none;
+flex-direction:column;
+position:absolute;
+top:60px;
+left:0;
+width:100%;
+background:#333;
+}
+.nav-links.active{
+display:flex;
+}
+.nav-links li{
+text-align:center;
+margin:15px 0;
+}
+}
+</style>
+</head>
+<body>
+<nav class="navbar">
+<div class="logo">ShopEasy</div>
+<ul class="nav-links" id="menu">
+<li><a href="#">Home</a></li>
+<li><a href="#">Products</a></li>
+<li><a href="#">Categories</a></li>
+<li><a href="#">About</a></li>
+<li><a href="#">Contact</a></li>
+<li><a href="#">Cart</a></li>
+</ul>
+<div class="menu-icon" onclick="toggleMenu()">☰</div>
+</nav>
+<script>
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("active");
+}
+</script>
+</body>
+</html>

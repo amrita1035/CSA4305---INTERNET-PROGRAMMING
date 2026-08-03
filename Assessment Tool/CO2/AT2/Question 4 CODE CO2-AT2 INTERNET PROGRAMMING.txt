@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mobile First Blog</title>
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+header{
+background:#007bff;
+color:white;
+padding:20px;
+text-align:center;
+}
+nav{
+display:flex;
+flex-direction:column;
+background:#333;
+}
+nav a{
+color:white;
+text-decoration:none;
+padding:15px;
+text-align:center;
+}
+.container{
+display:flex;
+flex-direction:column;
+padding:20px;
+}
+main{
+background:white;
+padding:20px;
+margin-bottom:20px;
+}
+aside{
+background:#ddd;
+padding:20px;
+}
+footer{
+background:#222;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:20px;
+}
+@media(min-width:768px){
+nav{
+flex-direction:row;
+justify-content:center;
+}
+.container{
+flex-direction:row;
+}
+main{
+flex:3;
+margin-right:20px;
+margin-bottom:0;
+}
+aside{
+flex:1;
+}
+}
+</style>
+</head>
+<body>
+<header>
+<h1>My Blog</h1>
+</header>
+<nav>
+<a href="#">Home</a>
+<a href="#">Articles</a>
+<a href="#">About</a>
+<a href="#">Contact</a>
+</nav>
+<div class="container">
+<main>
+<h2>Latest Blog</h2>
+<p>Welcome to my responsive mobile-first blog website.</p>
+</main>
+<aside>
+<h3>Categories</h3>
+<ul>
+<li>Technology</li>
+<li>Programming</li>
+<li>Education</li>
+</ul>
+</aside>
+</div>
+<footer>
+©2026 My Blog
+</footer>
+</body>
+</html>

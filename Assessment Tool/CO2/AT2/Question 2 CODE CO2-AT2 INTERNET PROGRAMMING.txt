@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Product Hover Effect</title>
+<style>
+body{
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+background:#eeeeee;
+font-family:Arial;
+}
+.card{
+width:260px;
+background:white;
+padding:20px;
+text-align:center;
+border-radius:10px;
+transition:.3s;
+}
+.card img{
+width:100%;
+border-radius:8px;
+}
+.card:hover{
+transform:scale(1.05);
+box-shadow:0 10px 20px rgba(0,0,0,.3);
+}
+button{
+padding:10px 20px;
+background:#007bff;
+color:white;
+border:none;
+cursor:pointer;
+transition:.3s;
+}
+button:hover{
+background:green;
+}
+</style>
+</head>
+<body>
+<div class="card">
+<img src="https://via.placeholder.com/250x180" alt="Product">
+<h2>Wireless Headphones</h2>
+<p>₹2499</p>
+<button>Buy Now</button>
+</div>
+</body>
+</html>
