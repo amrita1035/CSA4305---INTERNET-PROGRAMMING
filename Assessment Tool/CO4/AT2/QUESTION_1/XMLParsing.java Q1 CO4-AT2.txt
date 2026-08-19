@@ -1,0 +1,61 @@
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import org.w3c.dom.*;
+
+public class XMLParsing {
+
+    public static void main(String[] args) {
+
+        try {
+            DocumentBuilderFactory factory =
+                    DocumentBuilderFactory.newInstance();
+
+            DocumentBuilder builder = factory.newDocumentBuilder();
+
+            Document document = builder.parse("data.xml");
+
+            document.getDocumentElement().normalize();
+
+            Element root = document.getDocumentElement();
+
+            System.out.println("Root Element: " + root.getNodeName());
+
+            NodeList users = document.getElementsByTagName("user");
+
+            for (int i = 0; i < users.getLength(); i++) {
+
+                Node node = users.item(i);
+
+                if (node.getNodeType() == Node.ELEMENT_NODE) {
+
+                    Element user = (Element) node;
+
+                    String id = user
+                            .getElementsByTagName("ID")
+                            .item(0)
+                            .getTextContent();
+
+                    String name = user
+                            .getElementsByTagName("Name")
+                            .item(0)
+                            .getTextContent();
+
+                    String email = user
+                            .getElementsByTagName("Email")
+                            .item(0)
+                            .getTextContent();
+
+                    System.out.println("----------------------");
+                    System.out.println("ID: " + id);
+                    System.out.println("Name: " + name);
+                    System.out.println("Email: " + email);
+                }
+            }
+
+            System.out.println("XML parsing completed");
+
+        } catch (Exception e) {
+            System.out.println("Error: Unable to load XML file");
+        }
+    }
+}
