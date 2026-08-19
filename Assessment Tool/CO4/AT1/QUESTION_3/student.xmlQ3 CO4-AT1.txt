@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<student>
+    <id>101</id>
+    <name>John</name>
+    <age>20</age>
+    <course>Biotechnology</course>
+</student>

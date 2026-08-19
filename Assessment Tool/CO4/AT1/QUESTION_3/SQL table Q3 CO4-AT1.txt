@@ -1,0 +1,10 @@
+CREATE DATABASE studentdb;
+
+USE studentdb;
+
+CREATE TABLE Student (
+    ID INT PRIMARY KEY,
+    Name VARCHAR(50) NOT NULL,
+    Age INT CHECK (Age >= 18),
+    Course VARCHAR(50) NOT NULL
+);
