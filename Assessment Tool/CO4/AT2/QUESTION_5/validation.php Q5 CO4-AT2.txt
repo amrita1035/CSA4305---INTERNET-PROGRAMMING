@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>PHP Form Validation</title>
+</head>
+
+<body>
+
+<h2>Registration Form</h2>
+
+<form method="post">
+
+    Name:
+    <input type="text" name="name">
+    <br><br>
+
+    Email:
+    <input type="text" name="email">
+    <br><br>
+
+    Password:
+    <input type="password" name="password">
+    <br><br>
+
+    <input type="submit" name="submit" value="Submit">
+
+</form>
+
+<?php
+
+if (isset($_POST["submit"])) {
+
+    $errors = array();
+
+    $name = trim($_POST["name"]);
+    $email = trim($_POST["email"]);
+    $password = trim($_POST["password"]);
+
+    // Validate name
+    if (empty($name)) {
+        $errors[] = "Name is required";
+    }
+
+    // Validate email
+    if (empty($email)) {
+        $errors[] = "Email is required";
+    }
+    else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errors[] = "Invalid email format";
+    }
+
+    // Validate password
+    if (empty($password)) {
+        $errors[] = "Password is required";
+    }
+    else if (strlen($password) < 8) {
+        $errors[] = "Password must contain at least 8 characters";
+    }
+
+    // Display result
+    if (!empty($errors)) {
+
+        echo "<h3>Form contains errors</h3>";
+
+        foreach ($errors as $error) {
+            echo $error . "<br>";
+        }
+
+        echo "Please correct the errors";
+
+    } else {
+
+        echo "<h3>Validation successful</h3>";
+        echo "Form submitted successfully";
+    }
+}
+
+?>
+
+</body>
+</html>
