@@ -1,0 +1,27 @@
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.*;
+
+@WebServlet("/student")
+public class StudentServlet extends HttpServlet {
+
+    protected void doGet(HttpServletRequest request,
+                         HttpServletResponse response)
+            throws ServletException, IOException {
+
+        // Model data
+        String id = "101";
+        String name = "John";
+        String course = "BCA";
+
+        // Send data to View
+        request.setAttribute("id", id);
+        request.setAttribute("name", name);
+        request.setAttribute("course", course);
+
+        // Forward to JSP
+        request.getRequestDispatcher("student.jsp")
+               .forward(request, response);
+    }
+}
