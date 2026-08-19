@@ -1,0 +1,26 @@
+<%@ page import="java.sql.*" %>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Details</title>
+</head>
+
+<body>
+
+<h2>Student Details</h2>
+
+<%
+    String id = "101";
+    String name = "John";
+    String course = "B.Tech";
+%>
+
+<p>Student ID : <%= id %></p>
+<p>Name : <%= name %></p>
+<p>Course : <%= course %></p>
+
+</body>
+
+</html>
